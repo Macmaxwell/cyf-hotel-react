@@ -7,7 +7,7 @@ const TouristInfoCard = props => (
       <h5 className="card-title">{props.cityName}</h5>
       <p className="card-text">{props.description}</p>
       <a href={props.linkUrl} className="btn btn-primary">
-        Visit {props.cityName}
+        More About {props.cityName}
       </a>
     </div>
   </div>

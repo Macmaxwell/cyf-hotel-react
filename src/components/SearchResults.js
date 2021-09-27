@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+
 import moment from "moment";
 
 const daysBetweenDates = (dateA, dateB) => {
@@ -13,8 +14,13 @@ const calculateBookingLength = booking => {
 };
 
 const TableRow = props => {
+  const [isSelected, setIsSelected] = useState(false);
+  const toggleSelected = () => setIsSelected(!isSelected);
   return (
-    <tr>
+    <tr
+      className={isSelected ? "selected-search-row" : undefined}
+      onClick={toggleSelected}
+    >
       <th scope="row">{props.booking.id}</th>
       <td>{props.booking.title}</td>
       <td>{props.booking.firstName}</td>
